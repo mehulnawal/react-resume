@@ -82,6 +82,8 @@ function Projects() {
         }));
     };
 
+    const isLargeScreen = window.innerWidth >= 1024;
+
     return <>
         <ParticleBackground />
 
@@ -105,10 +107,22 @@ function Projects() {
                         key={project.id}
                         className={`sticky lg:w-[85%] mx-auto mb-16 ${theme === "light" ? "bg-white/90 border-gray-200 text-black" : "bg-gray-800/90 border-gray-700 text-white"} backdrop-blur-sm rounded-2xl p-6 lg:p-8 border shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 hover:transform hover:scale-[1.01]`}
                         style={{
-                            top: `${130 + (index * 20)}px`,
+                            top: isLargeScreen
+                                ? `${150 + index * 20}px`
+                                : index === 0
+                                    ? "40px"
+                                    : `${80 + index * 20}px`,
                             zIndex: 50 + index,
-                            marginBottom: '4rem'
+                            paddingBottom: "2rem",
+                            marginBottom: index === projectsData.length - 1 ? "4rem" : "1rem",
                         }}
+
+                    // className={`sticky lg:w-[85%] mx-auto mb-16 ${theme === "light" ? "bg-white/90 border-gray-200 text-black" : "bg-gray-800/90 border-gray-700 text-white"} backdrop-blur-sm rounded-2xl p-6 lg:p-8 border shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 hover:transform hover:scale-[1.01]`}
+                    // style={{
+                    //     top: `${130 + (index * 20)}px`,
+                    //     zIndex: 50 + index,
+                    //     marginBottom: '4rem'
+                    // }}
                     >
                         <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
                             {/* Left Content */}
