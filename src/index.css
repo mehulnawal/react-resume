@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@import "locomotive-scroll/dist/locomotive-scroll.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sora:wght@100..800&display=swap');
+
+
+:root {
+    /* background-color: #0A0A0A;
+    color: #fff; */
+
+    --Inter-font: "Inter", sans-serif;
+    --Sora: "Sora", sans-serif;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--Inter-font);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--Sora) !important;
+}
+
+.active-light {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 0.1rem;
+    color: #fff;
+}
+
+.active-dark {
+    border-bottom: 2px solid #000;
+    padding-bottom: 0.1rem;
+    color: #000;
+}
+
+#scrollDownBtn {
+    transition: transform 0.6s ease-in-out;
+    animation: scrollDown 2s linear infinite;
+}
+
+@keyframes scrollDown {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
