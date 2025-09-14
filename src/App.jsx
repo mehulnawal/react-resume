@@ -1,10 +1,8 @@
 /*
 1. Responsive 
 3. Loading time of 3d image
-4. add locomotive and gsap
-7. on click it should redirect to another page 
-9. add animation on toggle theme
-10. praticales not working 
+11. mobile - menu button
+12. project description
 */
 
 import Header from './components/header'

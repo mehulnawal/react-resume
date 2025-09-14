@@ -37,9 +37,9 @@ function Experience() {
     ]
 
     return <>
-        <ParticleBackground />
         <div className={`py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 px-4 sm:px-6 lg:px ${theme == "light" ? "bg-[#fff] text-[#000]" : "bg-[#0A0A0A] text-[#fff]"} z-3`} id="experience">
 
+            <ParticleBackground />
             <div className="max-w-5xl mx-auto relative z-10">
 
                 {/* Header */}

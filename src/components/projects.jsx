@@ -2,10 +2,14 @@ import { useContext } from 'react';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
 import { ThemeContext } from './theme';
 import ParticleBackground from './particales';
+import project2Image from '../assets/project-2-image.jpg'
+import firebaseAuth from '../assets/Firebase-auth.png'
+import firebaseLogo from '../assets/Firebase.png'
+import firebaseRealtimeDB from '../assets/Firebase-Realtime-DB.png'
+import tailwindcssLogo from '../assets/tailwindcss-logo.svg'
 
 // Import your actual project images
 const project1Image = "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop&auto=format";
-const project2Image = "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop&auto=format";
 const project3Image = "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=300&fit=crop&auto=format";
 
 const projectImages = {
@@ -20,20 +24,20 @@ function Projects() {
     const projectsData = [
         {
             id: 1,
-            title: "🎮 Pokemon Cards Manager",
-            description: "A comprehensive Pokemon card management system with search, filter, and collection features. Users can browse cards, add to favorites, and track their collection progress with detailed statistics.",
-            techStack: ["React", "Tailwindcss", "API INTEGRATION", "Bootstrap", "Git"],
-            liveDemo: "https://meowney-demo.com",
-            github: "https://github.com/mehulnawal/Youtube-clone-js",
+            title: "Inventory Management App",
+            description: "Developed a React + TailwindCSS app with Firebase backend and API integration to manage products, track stock, and update inventory in real time; version controlled with Git.",
+            techStack: ["React", "Tailwindcss", "API INTEGRATION", "Git", 'Firebase', 'Firebase Realtime Database'],
+            liveDemo: "",
+            github: "",
             image: projectImages[1]
         },
         {
             id: 2,
-            title: "🎬 YouTube Clone",
-            description: "A fully functional YouTube clone featuring video playback, search functionality, and responsive design. Includes channel subscriptions, video recommendations, and comment system integration.",
-            techStack: ["Javascript", "HTML", "Css", "Tailwindcss", "API INTEGRATION", "Git"],
-            liveDemo: "https://github.com/mehulnawal/Youtube-clone-js",
-            github: "https://youtube-clone-api-js.netlify.app/",
+            title: "🎬 Firebase Login System",
+            description: "Firebase Login System – Built a secure React authentication system using Firebase (Email/Password & Google Sign-In) with protected routes and deployed on Netlify.",
+            techStack: ["Javascript", "HTML", "Css", "Tailwindcss", "API INTEGRATION", "Git", 'Firebase-Auth'],
+            liveDemo: "https://github.com/mehulnawal/React-Login-System",
+            github: "https://react-login-system-mehul.netlify.app/",
             image: projectImages[2]
         },
         {
@@ -63,7 +67,7 @@ function Projects() {
                 logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
             },
             "Tailwindcss": {
-                logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+                logo: tailwindcssLogo,
             },
             "API INTEGRATION": {
                 logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/json/json-original.svg",
@@ -73,6 +77,15 @@ function Projects() {
             },
             "Git": {
                 logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+            },
+            "Firebase-Auth": {
+                logo: firebaseAuth
+            },
+            "Firebase": {
+                logo: firebaseLogo
+            },
+            "Firebase Realtime Database": {
+                logo: firebaseRealtimeDB
             }
         };
 
@@ -85,9 +98,9 @@ function Projects() {
     const isLargeScreen = window.innerWidth >= 1024;
 
     return <>
-        <ParticleBackground />
 
         <div className={`py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 px-4 sm:px-6 lg:px ${theme == "light" ? "bg-[#fff] text-[#000]" : "bg-[#0A0A0A] text-[#fff]"} z-3`} id="projects">
+            <ParticleBackground />
 
             {/* header */}
             <div className="text-center mb-16" id='header'>

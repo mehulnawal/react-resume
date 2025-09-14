@@ -44,8 +44,8 @@ function Header() {
   }
 
   return <>
-    <ParticleBackground />
     <div className={`min-h-screen max-h-fit py-0 lg:py-10 flex flex-col ${theme == "light" ? "bg-[#fff] text-[#000]" : "bg-[#0A0A0A] text-[#fff]"}`} id='home'>
+      <ParticleBackground />
 
 
       {/* navbar after lg */}
@@ -150,7 +150,7 @@ function Header() {
               <BsArrowRightShort className='group-hover:translate-x-1 inline-block text-2xl transition-all ease-in-out ml-2' />
             </a>
 
-            <a href={resume} download="Mehul Nawal Resume.pdf" className={`py-2.5 px-9 bg-transparent border-1 border-stone-500 rounded-lg cursor-pointer group flex items-center ${theme == "light" ? "text-[#000]" : "text-[#fff]"}`}>Download CV
+            <a href={resume} download="Mehul Nawal Resume.pdf" className={`py-2.5 px-9 bg-transparent border-1 border-stone-500 rounded-lg cursor-pointer group flex items-center ${theme == "light" ? "text-[#000]" : "text-[#fff]"}`}>Download Resume
               <IoMdCloudDownload className='group-hover:translate-x-1 inline-block text-sm transition-all ease-in-out mb-0 ml-2' />
             </a>
           </div>

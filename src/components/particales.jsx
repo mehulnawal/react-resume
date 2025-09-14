@@ -1,11 +1,10 @@
 import { useContext } from "react";
-import Particles from "@tsparticles/react";
 import { ThemeContext } from "./theme";
-import { loadSlim } from "@tsparticles/slim"; // slim version = smaller bundle
+import Particles from "react-tsparticles";
+import { loadSlim } from "tsparticles-slim";
 
 export default function ParticleBackground() {
     const { theme } = useContext(ThemeContext);
-
     const particleColor = theme === "dark" ? "#ffffff" : "#000000";
 
     const options = {
@@ -20,10 +19,10 @@ export default function ParticleBackground() {
             opacity: {
                 value: 0.5,
                 random: true,
-                anim: {
+                animation: {
                     enable: true,
                     speed: 0.5,
-                    opacity_min: 0.1,
+                    minimumValue: 0.1,
                     sync: false
                 }
             }
@@ -32,21 +31,21 @@ export default function ParticleBackground() {
     };
 
     return (
-        <Particles
-            id="tsparticles"
-            options={options}
-            init={async (engine) => {
-                await loadSlim(engine); // load slim bundle
-            }}
+        <div
             style={{
                 position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                zIndex: 0,
+                inset: 0, // top:0, right:0, bottom:0, left:0
+                zIndex: 0, // keep it behind content
                 pointerEvents: "none"
             }}
-        />
+        >
+            <Particles
+                id="tsparticles"
+                options={options}
+                init={async (engine) => {
+                    await loadSlim(engine);
+                }}
+            />
+        </div>
     );
 }
