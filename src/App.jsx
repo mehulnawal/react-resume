@@ -1,7 +1,6 @@
 /*
 1. Responsive 
 3. Loading time of 3d image
-11. mobile - menu button
 12. project description
 */
 

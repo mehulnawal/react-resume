@@ -5,7 +5,7 @@ import resume from '../assets/MehulNawalResume.pdf'
 import { MdOutlineWbSunny, MdOutlineMenu } from "react-icons/md";
 import { BsArrowRightShort } from "react-icons/bs";
 import { IoMdCloudDownload } from "react-icons/io";
-import { FaUserTie } from "react-icons/fa6";
+import { FaRegCircleXmark, FaUserTie } from "react-icons/fa6";
 import { LuMoon } from "react-icons/lu";
 
 import { useContext, useEffect, useState } from 'react';
@@ -23,6 +23,7 @@ import ScrollSpy from 'react-scrollspy-navigation';
 function Header() {
 
   const { theme, setTheme } = useContext(ThemeContext)
+  const [showMenuInMobile, setShowMenuInMobile] = useState(false);
   // const { active, setActive } = useContext(ActiveClass)
   const [loader, setLoader] = useState(true);
 
@@ -58,6 +59,7 @@ function Header() {
           <div id="leftBannerText" className={`text-[17px] ${theme == "light" ? "text-[#3B82F6] font-bold" : "text-stone-300"}`}>Built with Love & Logic</div>
         </div>
 
+        {/* navRight */}
         <ScrollSpy activeClass={theme === "dark" ? "active-light" : "active-dark"} offsetTop={40}>
           <div id="navRight" className='flex items-center justify-between gap-6 text-lg'>
             <ul className={`flex items-start gap-6 ${theme == "light" ? "text-black" : " text-stone-300"}`}>
@@ -93,7 +95,7 @@ function Header() {
       </div>
 
       {/* navbar before lg */}
-      <div id="navBar" className="mx-auto border-b-gray-400 border-b-[0.3px] py-5 w-[100%] px-5 outline-none items-center justify-between flex lg:hidden">
+      <div id="navBar" className="relative mx-auto border-b-gray-400 border-b-[0.3px] py-5 w-[100%] px-5 outline-none items-center justify-between flex lg:hidden">
 
         <div id="navLeft" className='flex gap-3 items-center w-fit'>
           <div id="bannerImage" className='h-fit'>
@@ -133,9 +135,41 @@ function Header() {
             }
           </div>
 
-          <MdOutlineMenu id='menuButhrefn' className='text-2xl cursor-pointer md:hidden d-md-block' />
+          <div className='text-2xl cursor-pointer md:hidden d-md-block' onClick={() => setShowMenuInMobile(!showMenuInMobile)}>
+            {showMenuInMobile ? <FaRegCircleXmark /> : <MdOutlineMenu id='menuButhrefn' />}
+          </div>
         </div>
       </div>
+
+      {/* mobile navbar  */}
+      {showMenuInMobile && <div className='md:hidden border px-3 w-full flex items-center justify-between gap-6 text-lg'>
+        <ScrollSpy activeClass={theme === "dark" ? "active-light" : "active-dark"} offsetTop={40}>
+          <div className='flex items-center gap-6 text-lg'>
+            <ul className={`flex-col flex items-start gap-2 ${theme == "light" ? "text-black" : " text-stone-300"}`}>
+
+              <li onClick={() => () => handleActive("Home")} className={`${theme == "light" ? "!text-black !hover:text-[#000000d1]" : "!hover:text-white !text-white"}`}>
+                <a href="#home">Home</a>
+              </li>
+
+              <li onClick={() => () => handleActive("About")} className={`${theme == "light" ? "!text-black !hover:text-[#000000d1]" : "!hover:text-white !text-white"}`}>
+                <a href="#about">About</a>
+              </li>
+
+              <li onClick={() => handleActive} className={`${theme == "light" ? "!text-black !hover:text-[#000000d1]" : "!hover:text-white !text-white"}`}>
+                <a href="#experience">Experience</a>
+              </li>
+
+              <li onClick={() => handleActive} className={`${theme == "light" ? "!text-black !hover:text-[#000000d1]" : "!hover:text-white !text-white"}`}>
+                <a href="#education">Education</a>
+              </li>
+
+              <li onClick={() => handleActive} className={`${theme == "light" ? "!text-black !hover:text-[#000000d1]" : "!hover:text-white !text-white"}`}>
+                <a href="#projects">Projects</a>
+              </li>
+            </ul>
+          </div>
+        </ScrollSpy>
+      </div>}
 
       {/* banner */}
       <div id='banner' className="container mx-auto w-[70%] min-h-fit max-h-screen  gap-4 items-center mb-0 relative py-20 lg:mt-13">
