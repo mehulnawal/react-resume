@@ -10,7 +10,7 @@ function About() {
     const { theme } = useContext(ThemeContext)
 
     return <>
-        <section className={`relative py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 px-4 sm:px-6 lg:px ${theme == "light" ? "bg-[#fff] text-[#000]" : "bg-[#0A0A0A] text-[#fff]"}`} id="about">
+        <section className={`py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 px-4 sm:px-6 lg:px ${theme == "light" ? "bg-[#fff] text-[#000]" : "bg-[#0A0A0A] text-[#fff]"}`} id="about">
             <ParticleBackground />
 
             <h1 className={`font-bold text-2xl md:text-3xl text-center ${theme == "light" ? "text-[#000]" : "text-[#fff]"}`}>About Me</h1>

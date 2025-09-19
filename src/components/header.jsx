@@ -48,7 +48,6 @@ function Header() {
     <div className={`min-h-screen max-h-fit py-0 lg:py-10 flex flex-col ${theme == "light" ? "bg-[#fff] text-[#000]" : "bg-[#0A0A0A] text-[#fff]"}`} id='home'>
       <ParticleBackground />
 
-
       {/* navbar after lg */}
       <div id="navBar" className="!mx-auto border-gray-400 border-[0.3px] py-3 xl:w-[70%] w-[100%] rounded-xl backdrop-blur-[50px] px-5 items-center justify-between hidden lg:flex fixed left-1/2 -translate-x-1/2 z-100">
 
@@ -64,23 +63,23 @@ function Header() {
           <div id="navRight" className='flex items-center justify-between gap-6 text-lg'>
             <ul className={`flex items-start gap-6 ${theme == "light" ? "text-black" : " text-stone-300"}`}>
 
-              <li onClick={() => () => handleActive("Home")} className={`${theme == "light" ? "!text-black !hover:text-[#000000d1]" : "!hover:text-white !text-white"}`}>
+              <li className={`${theme == "light" ? "!text-black !hover:text-[#000000d1]" : "!hover:text-white !text-white"}`}>
                 <a href="#home">Home</a>
               </li>
 
-              <li onClick={() => () => handleActive("About")} className={`${theme == "light" ? "!text-black !hover:text-[#000000d1]" : "!hover:text-white !text-white"}`}>
+              <li className={`${theme == "light" ? "!text-black !hover:text-[#000000d1]" : "!hover:text-white !text-white"}`}>
                 <a href="#about">About</a>
               </li>
 
-              <li onClick={() => handleActive} className={`${theme == "light" ? "!text-black !hover:text-[#000000d1]" : "!hover:text-white !text-white"}`}>
+              <li className={`${theme == "light" ? "!text-black !hover:text-[#000000d1]" : "!hover:text-white !text-white"}`}>
                 <a href="#experience">Experience</a>
               </li>
 
-              <li onClick={() => handleActive} className={`${theme == "light" ? "!text-black !hover:text-[#000000d1]" : "!hover:text-white !text-white"}`}>
+              <li className={`${theme == "light" ? "!text-black !hover:text-[#000000d1]" : "!hover:text-white !text-white"}`}>
                 <a href="#education">Education</a>
               </li>
 
-              <li onClick={() => handleActive} className={`${theme == "light" ? "!text-black !hover:text-[#000000d1]" : "!hover:text-white !text-white"}`}>
+              <li className={`${theme == "light" ? "!text-black !hover:text-[#000000d1]" : "!hover:text-white !text-white"}`}>
                 <a href="#projects">Projects</a>
               </li>
             </ul>
@@ -104,30 +103,6 @@ function Header() {
           <div id="leftBannerText" className={`text-[17px] ${theme == "light" ? "text-[#3B82F6] font-bold" : "text-stone-300"}`}>Built with Love & Logic</div>
         </div>
 
-        <div id="navRight" className='hidden md:flex items-center justify-between gap-6 text-lg'>
-          <ul className={`flex items-start gap-6 ${theme == "light" ? "text-black" : " text-stone-300"}`}>
-            <li className={`active ${theme == "light" ? "hover:bg-[#000000d1]" : "hover:text-white"}`}>
-              <a href="/">Home</a>
-            </li>
-
-            <li className='hover:text-white'>
-              <a href="/about">About</a>
-            </li>
-
-            <li className='hover:text-white'>
-              <a href="/experience">Experience</a>
-            </li>
-
-            <li className='hover:text-white'>
-              <a href="/education">Education</a>
-            </li>
-
-            <li className='hover:text-white'>
-              <a href="#projects">Projects</a>
-            </li>
-          </ul>
-        </div>
-
         <div className='flex items-center gap-3'>
           {/* theme toggle */}
           <div id='themeIcons' className='flex items-center gap-3 text-xl' onClick={handleTheme}>
@@ -135,35 +110,35 @@ function Header() {
             }
           </div>
 
-          <div className='text-2xl cursor-pointer md:hidden d-md-block' onClick={() => setShowMenuInMobile(!showMenuInMobile)}>
+          <div className='text-2xl cursor-pointer lg:hidden d-md-block' onClick={() => setShowMenuInMobile(!showMenuInMobile)}>
             {showMenuInMobile ? <FaRegCircleXmark /> : <MdOutlineMenu id='menuButhrefn' />}
           </div>
         </div>
       </div>
 
       {/* mobile navbar  */}
-      {showMenuInMobile && <div className='md:hidden border px-3 w-full flex items-center justify-between gap-6 text-lg'>
+      {showMenuInMobile && <div className='lg:hidden border px-3 w-full flex items-center justify-between gap-6 text-lg'>
         <ScrollSpy activeClass={theme === "dark" ? "active-light" : "active-dark"} offsetTop={40}>
           <div className='flex items-center gap-6 text-lg'>
             <ul className={`flex-col flex items-start gap-2 ${theme == "light" ? "text-black" : " text-stone-300"}`}>
 
-              <li onClick={() => () => handleActive("Home")} className={`${theme == "light" ? "!text-black !hover:text-[#000000d1]" : "!hover:text-white !text-white"}`}>
+              <li className={`${theme == "light" ? "!text-black !hover:text-[#000000d1]" : "!hover:text-white !text-white"}`}>
                 <a href="#home">Home</a>
               </li>
 
-              <li onClick={() => () => handleActive("About")} className={`${theme == "light" ? "!text-black !hover:text-[#000000d1]" : "!hover:text-white !text-white"}`}>
+              <li className={`${theme == "light" ? "!text-black !hover:text-[#000000d1]" : "!hover:text-white !text-white"}`}>
                 <a href="#about">About</a>
               </li>
 
-              <li onClick={() => handleActive} className={`${theme == "light" ? "!text-black !hover:text-[#000000d1]" : "!hover:text-white !text-white"}`}>
+              <li className={`${theme == "light" ? "!text-black !hover:text-[#000000d1]" : "!hover:text-white !text-white"}`}>
                 <a href="#experience">Experience</a>
               </li>
 
-              <li onClick={() => handleActive} className={`${theme == "light" ? "!text-black !hover:text-[#000000d1]" : "!hover:text-white !text-white"}`}>
+              <li className={`${theme == "light" ? "!text-black !hover:text-[#000000d1]" : "!hover:text-white !text-white"}`}>
                 <a href="#education">Education</a>
               </li>
 
-              <li onClick={() => handleActive} className={`${theme == "light" ? "!text-black !hover:text-[#000000d1]" : "!hover:text-white !text-white"}`}>
+              <li className={`${theme == "light" ? "!text-black !hover:text-[#000000d1]" : "!hover:text-white !text-white"}`}>
                 <a href="#projects">Projects</a>
               </li>
             </ul>

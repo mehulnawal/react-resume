@@ -27,8 +27,8 @@ function Projects() {
             title: "Inventory Management App",
             description: "Developed a React + TailwindCSS app with Firebase backend and API integration to manage products, track stock, and update inventory in real time; version controlled with Git.",
             techStack: ["React", "Tailwindcss", "API INTEGRATION", "Git", 'Firebase', 'Firebase Realtime Database'],
-            liveDemo: "",
-            github: "",
+            liveDemo: "https://inventory-tracking-mehulnawal.netlify.app/",
+            github: "https://github.com/mehulnawal/react-inventoryTracking",
             image: projectImages[1]
         },
         {
@@ -42,7 +42,7 @@ function Projects() {
         },
         {
             id: 3,
-            title: "🦠 Corona Tracker App",
+            title: "Real time Chat App",
             description: "Real-time COVID-19 tracking application with global and country-specific statistics. Features interactive charts, daily updates, and vaccination progress tracking with clean data visualization.",
             techStack: ["Javascript", "HTML", "Css", "Tailwindcss", "API INTEGRATION", "Git"],
             liveDemo: "https://corona-api-js-project.netlify.app/",
