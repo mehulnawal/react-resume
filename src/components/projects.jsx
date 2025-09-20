@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
 import { ThemeContext } from './theme';
 import ParticleBackground from './particales';
+import project1Image from '../assets/project-1-image.jpg'
 import project2Image from '../assets/project-2-image.jpg'
 import firebaseAuth from '../assets/Firebase-auth.png'
 import firebaseLogo from '../assets/Firebase.png'
@@ -9,7 +10,6 @@ import firebaseRealtimeDB from '../assets/Firebase-Realtime-DB.png'
 import tailwindcssLogo from '../assets/tailwindcss-logo.svg'
 
 // Import your actual project images
-const project1Image = "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop&auto=format";
 const project3Image = "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=300&fit=crop&auto=format";
 
 const projectImages = {
@@ -40,15 +40,15 @@ function Projects() {
             github: "https://react-login-system-mehul.netlify.app/",
             image: projectImages[2]
         },
-        {
-            id: 3,
-            title: "Real time Chat App",
-            description: "Real-time COVID-19 tracking application with global and country-specific statistics. Features interactive charts, daily updates, and vaccination progress tracking with clean data visualization.",
-            techStack: ["Javascript", "HTML", "Css", "Tailwindcss", "API INTEGRATION", "Git"],
-            liveDemo: "https://corona-api-js-project.netlify.app/",
-            github: "https://github.com/mehulnawal/corona-Api-js-project",
-            image: projectImages[3]
-        }
+        // {
+        //     id: 3,
+        //     title: "Real time Chat App",
+        //     description: "Real-time COVID-19 tracking application with global and country-specific statistics. Features interactive charts, daily updates, and vaccination progress tracking with clean data visualization.",
+        //     techStack: ["Javascript", "HTML", "Css", "Tailwindcss", "API INTEGRATION", "Git"],
+        //     liveDemo: "https://corona-api-js-project.netlify.app/",
+        //     github: "https://github.com/mehulnawal/corona-Api-js-project",
+        //     image: projectImages[3]
+        // }
     ];
 
     // Tech stack with logos from CDN
@@ -98,7 +98,6 @@ function Projects() {
     const isLargeScreen = window.innerWidth >= 1024;
 
     return <>
-
         <div className={`py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 px-4 sm:px-6 lg:px ${theme == "light" ? "bg-[#fff] text-[#000]" : "bg-[#0A0A0A] text-[#fff]"} z-3`} id="projects">
             <ParticleBackground />
 
@@ -209,7 +208,7 @@ function Projects() {
                                     <img
                                         src={project.image}
                                         alt={project.title}
-                                        className="relative w-full h-48 lg:h-64 xl:h-72 object-cover rounded-xl shadow-lg group-hover:shadow-2xl transition-all duration-300 border border-gray-600/50"
+                                        className="relative w-full h-full lg:h-64 xl:h-72 object-contain rounded-xl shadow-lg group-hover:shadow-2xl transition-all duration-300 border border-gray-600/50"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                 </div>
